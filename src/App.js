@@ -24,8 +24,14 @@ const App = (props) => {
         <Route path='/music' component={Music} />
         <Route path='/settings' component={Settings} /> */}
 
-        <Route path='/dialogs' render={() => <Dialogs dialogsData={props.state.profilePage.dialogsData} messagesData={props.state.messagesPage.messagesData} />} />
-        <Route path='/profile' render={() => <Profile postData={props.state.profilePage.postData} />} />
+        <Route path='/dialogs' render={() => <Dialogs 
+                  dialogsData={props.state.profilePage.dialogsData} 
+                  messagesData={props.state.messagesPage.messagesData} />} />
+        <Route path='/profile' render={() => <Profile 
+                  postData={props.state.profilePage.postData} 
+                  addPost={props.addPost}
+                  updatePostText = { props.updatePostText }
+                  newPostText={props.state.profilePage.newPostText} />} />
         <Route path='/news' render={() => <News />} />
         <Route path='/music' render={() => <Music />} />
         <Route path='/settings' render={() => <Settings />} />
